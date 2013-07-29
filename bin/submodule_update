@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'git_submodule_task'
+
+load './Submodulefile'
+submodule_path = ARGV[0]
+
+if submodule_path
+  submodules[submodule_path].update
+else
+  puts 'submodule list'
+  puts '-------------------------'
+  submodules.each do |m|
+    puts m.repo_path
+  end
+end
+
+
